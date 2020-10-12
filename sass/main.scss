@@ -1,0 +1,34 @@
+@import "./abstract/functions.scss";
+@import "./abstract/mixins.scss";
+@import "./abstract/variables.scss";
+
+@import "./base/animations.scss";
+@import "./base/base.scss";
+@import "./base/typography.scss";
+@import "./base/utilities.scss";
+
+@import "./components/buttons.scss";
+@import "./components/compositions.scss";
+@import "./components/features.scss";
+@import "./components/cards.scss";
+@import "./components/story.scss";
+@import "./components/background.scss";
+@import "./components/form.scss";
+
+@import "./layout/header.scss";
+@import "./layout/grid.scss";
+@import "./layout/footer.scss";
+@import "./layout/navigation.scss";
+@import "./layout/popup.scss";
+@import "./pages/home.scss";
+
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/*--------------- header----------------- */

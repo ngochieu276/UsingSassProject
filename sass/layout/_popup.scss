@@ -1,0 +1,70 @@
+.popup {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $color-dark;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__content {
+    width: 60%;
+    height: auto;
+    background-color: $color-white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    display: table;
+    transition: all 0.5s;
+  }
+
+  &__left {
+    display: table-cell;
+    width: 33.3333%;
+  }
+
+  &__right {
+    display: table-cell;
+    width: 66.66667%;
+    vertical-align: middle;
+    padding: 3rem 2rem;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+
+  &__text {
+    font-size: 1.3rem;
+    column-count: 2;
+    column-gap: 3rem;
+    column-rule: 2;
+    margin-bottom: 1rem;
+  }
+
+  &__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &:target &__content {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

@@ -1,0 +1,101 @@
+.form {
+  &__group {
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__input {
+    outline: none;
+    font-size: 1.5rem;
+    display: block;
+    color: inherit;
+    font-family: inherit;
+    width: 35%;
+    height: 3rem;
+    border-bottom: 3px solid transparent;
+    border-radius: 3px;
+    transition: 0.3s;
+
+    @include respond(tab-land) {
+      width: 45%;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
+    @include respond(tab-phone) {
+      width: 100%;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 3px solid $color-primary;
+      box-shadow: 0.5rem 0.5rem 0.5rem rgba(#000, 0.5);
+    }
+    &::-webkit-input-placeholder {
+      color: $color-dark-grey-2;
+    }
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+  }
+
+  &__label {
+    padding: 1rem;
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-1rem);
+  }
+
+  &__select-group {
+    display: inline-block;
+    width: 24%;
+    @include respond(tab-land) {
+      display: block;
+    }
+  }
+
+  &__select-input {
+    display: none;
+  }
+  &__select-label {
+    font-size: $defaul-fontsize;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem;
+  }
+
+  &__select-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: -4px;
+    left: 0;
+
+    &::after {
+      content: "";
+      border-radius: 50%;
+      position: absolute;
+      height: 1rem;
+      width: 1rem;
+      background-color: $color-primary;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+
+  &__select-input:checked ~ &__select-label &__select-button::after {
+    opacity: 1;
+  }
+}
